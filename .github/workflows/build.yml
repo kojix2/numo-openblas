@@ -3,8 +3,8 @@ name: build
 on: [push, pull_request]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-ubuntu:
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         ruby: [ '2.5', '2.6', '2.7' ]
@@ -19,5 +19,42 @@ jobs:
       - name: Build and test with Rake
         run: |
           gem install bundler
-          bundle install --jobs 4 --retry 3
+          bundle install
+          bundle exec rake
+  build-mac:
+    runs-on: macos-11.0
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install gcc and gfortran
+        run: brew install gcc gfortran make
+      - name: Set up Ruby 2.7
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - name: Build and test with Rake
+        run: |
+          gem install bundler
+          bundle install
+          bundle exec rake
+  build-windows:
+    runs-on: windows-2019
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - name: Install gcc and gfortran
+        uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          install: >-
+            base-devel
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-ruby
+            git
+            make
+      - uses: actions/checkout@v2
+      - name: Build and test with Rake
+        run: |
+          gem install bundler
+          bundle install
           bundle exec rake
