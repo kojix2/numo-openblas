@@ -1,8 +1,11 @@
-# frozen-string-literal: true
+# frozen_string_literal: true
 
 require 'numo/narray'
 require 'numo/linalg/linalg'
 require 'numo/openblas/version'
 require 'numo/openblas/openblas'
 
-Numo::Linalg::Loader.load_openblas(File.expand_path("#{__dir__}/../../vendor/lib/"))
+Numo::Linalg::Loader.load_openblas(
+  File.expand_path("#{__dir__}/../../vendor/lib/"),
+  File.expand_path("#{__dir__}/../../vendor/bin/")
+)

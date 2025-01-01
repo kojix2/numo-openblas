@@ -8,13 +8,15 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   Exclude:
-    - 'ext/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
     - 'Steepfile'
 
 Gemspec/RequiredRubyVersion:
   Enabled: false
+
+Layout/LineLength:
+  Max: 128
 
 Metrics/BlockLength:
   Exclude:
@@ -44,6 +46,9 @@ RSpec/NamedSubject:
 
 RSpec/NestedGroups:
   Max: 5
+
+RSpec/SpecFilePathFormat:
+  Enabled: false
 
 Security/MarshalLoad:
   Exclude:

@@ -1,3 +1,27 @@
+## [[0.4.15](https://github.com/yoshoku/numo-openblas/compare/v0.4.14...v0.4.15)]
+- Change the version of OpenBLAS to be downloaded to [0.3.28](https://github.com/OpenMathLib/OpenBLAS/releases/tag/v0.3.28).
+
+## [[0.4.14](https://github.com/yoshoku/numo-openblas/compare/v0.4.13...v0.4.14)]
+- Change the version of OpenBLAS to be downloaded to [0.3.27](https://github.com/OpenMathLib/OpenBLAS/releases/tag/v0.3.27).
+
+## [[0.4.13](https://github.com/yoshoku/numo-openblas/compare/v0.4.12...v0.4.13)]
+- Change the version of OpenBLAS to be downloaded to [0.3.26](https://github.com/OpenMathLib/OpenBLAS/releases/tag/v0.3.26).
+
+## 0.4.12
+- Change the version of OpenBLAS to be downloaded to 0.3.25.
+
+## 0.4.11
+- Change the version of OpenBLAS to be downloaded to 0.3.24.
+
+## 0.4.10
+- Refactor extconf.rb with RuboCop.
+- Change to check download file with MD5.
+- Add vendor/bin directory to OpenBLAS load directory for Windows ([#2](https://github.com/yoshoku/numo-openblas/pull/2)).
+  - Since the author does not have a Windows PC, the operation cannot be confirmed.
+
+## 0.4.9
+- Change the version of OpenBLAS to be downloaded to 0.3.23.
+
 ## 0.4.8
 - Change the version of OpenBLAS to be downloaded to 0.3.21.
 
